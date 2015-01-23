@@ -1,4 +1,4 @@
 Joomla-Extensions
 =================
 
-Joomla Plugins
+Joomla Components
