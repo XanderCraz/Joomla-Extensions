@@ -1,9 +1,9 @@
-<?php /*echo "<pre>";
-print_r($data1);die;*/?>
+<?php echo "<pre>";
+//print_r($data);die;?>
 
 <div id="ranking_list">
     <table class="table table-condensed">
-        <caption>Table:- <?php echo $data['league']?>, MatchDay:- <?php echo $data['matchday']?></caption>
+        <caption>Table:- <?php echo $data['leagueCaption']?>, MatchDay:- <?php echo $data['matchday']?></caption>
         <thead>
         <tr>
             <th>S.N</th>
@@ -16,10 +16,10 @@ print_r($data1);die;*/?>
         </tr>
         </thead>
         <tbody>
-        <?php foreach($data['ranking'] as $rank){?>
+        <?php foreach($data['standing'] as $rank){?>
     <tr>
-        <th><?php echo $rank['rank']?></th>
-        <th><?php echo $rank['team']?></th>
+        <th><?php echo $rank['position']?></th>
+        <th><?php echo $rank['teamName']?></th>
         <th><?php echo $rank['playedGames']?></th>
         <th><?php echo $rank['goals']?></th>
         <th><?php echo $rank['goalsAgainst']?></th>
