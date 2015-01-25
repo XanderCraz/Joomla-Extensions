@@ -12,5 +12,5 @@ ModSbFootScoresHelper::loadDocuments();
 $com_id = $params->get('com_name');
 $result = ModSbFootScoresHelper::init('http://www.football-data.org/alpha/soccerseasons/'.$com_id.'/leagueTable');
 $data = json_decode($result,true);
-
+$table_type = $params->get('table_style');
 require JModuleHelper::getLayoutPath('mod_sbfootscores', $params->get('layout', 'ranking'));

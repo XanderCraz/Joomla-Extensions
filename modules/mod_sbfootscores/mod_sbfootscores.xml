@@ -39,6 +39,15 @@
                 <option value="357">Serie A</option>
                 <option value="358">Primera Division</option>
                 </field>
+                <field
+                    name="table_style"
+                    type="radio"
+                    default="points_only"
+                    label="Tabele Style"
+                    desc="Select Tabele Style To Show">
+                    <option value="points_only">Points Only</option>
+                    <option value="full_table">Full Table</option>                    
+                </field>
             </fieldset>
         </fields>
     </config>
