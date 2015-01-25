@@ -22,13 +22,24 @@ class ModSbFootScoresHelper{
         return $result;
     }
 
-    public static function loadDocuments(){
+    public static function loadDocuments($layout){
         $document = JFactory::getDocument();
         static $docLoaded;
+        static $teamsLoaded;
 
-        if ($docLoaded) {
+        if ($docLoaded && $teamsLoaded) {
             return;
         }
+        $document->addScript('http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js');
+        if($layout == "teams" && !$teamsLoaded){
+            $document->addScript(JUri::base().'modules/mod_sbfootscores/js/modernizr.custom.17475.js');
+            $document->addScript(JUri::base().'modules/mod_sbfootscores/js/jquerypp.custom.js');
+            $document->addScript(JUri::base().'modules/mod_sbfootscores/js/jquery.elastislide.js');
+            $document->addStylesheet(JUri::base().'modules/mod_sbfootscores/css/demo.css');
+            $document->addStylesheet(JUri::base().'modules/mod_sbfootscores/css/elastislide.css');
+            $document->addStylesheet(JUri::base().'modules/mod_sbfootscores/css/custom.css');
+            $teamsLoaded = true;
+        }        
         $document->addScript(JUri::base().'modules/mod_sbfootscores/js/sbfootscores.js');
         $docLoaded = true;
     }
@@ -40,5 +51,24 @@ class ModSbFootScoresHelper{
         $url = "http://www.football-data.org/soccerseasons/".$com_id."/ranking";
         $teams = static::init($url);
         echo $teams;die;
+    }
+
+    public static function getUrl($params){        
+        $com_id = $params->get('mod_sbfootscores_league',354);
+        $layout = $params->get('mod_sbfootscores_layout','ranking');
+        switch ($layout) {
+            case 'ranking':
+                $url = "http://www.football-data.org/alpha/soccerseasons/$com_id/leagueTable";
+                break;            
+            case 'teams':
+                $url = "http://www.football-data.org/alpha/soccerseasons/$com_id/teams";                
+                break;
+            default:
+                $url = "http://www.football-data.org/alpha/soccerseasons/$com_id/leagueTable";
+                break;
+        };
+
+        return $url;
+
     }
 }

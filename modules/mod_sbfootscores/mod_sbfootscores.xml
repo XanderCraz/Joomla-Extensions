@@ -28,7 +28,19 @@
         <fields name="params">
             <fieldset name="basic">
                 <field
-                    name="com_name"
+                    name="mod_sbfootscores_layout"
+                    type="list"
+                    default="ranking"
+                    label="Select Layout"
+                    description="Select Which Layout To Display In Module">
+                <option value="ranking">Show League Table</option>
+                <option value="teams">League Teams List</option>
+                <option value="fixtures">Fixtures</option>
+                </field>                
+            </fieldset>
+            <fieldset name="league" label="Leagues">                
+                <field
+                    name="mod_sbfootscores_league"
                     type="list"
                     default="354"
                     label="Select League"
@@ -39,8 +51,11 @@
                 <option value="357">Serie A</option>
                 <option value="358">Primera Division</option>
                 </field>
+            </fieldset>
+
+            <fieldset name="table" label="Table Layout">                
                 <field
-                    name="table_style"
+                    name="mod_sbfootscores_table"
                     type="radio"
                     default="points_only"
                     label="Tabele Style"
