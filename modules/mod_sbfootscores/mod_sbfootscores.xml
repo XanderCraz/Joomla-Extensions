@@ -34,8 +34,8 @@
                     label="Select Layout"
                     description="Select Which Layout To Display In Module">
                 <option value="ranking">Show League Table</option>
-                <option value="teams">League Teams List</option>
-                <option value="fixtures">Fixtures</option>
+                <!-- <option value="teams">League Teams List</option>
+                <option value="fixtures">Fixtures</option> -->
                 </field>                
             </fieldset>
             <fieldset name="league" label="Leagues">                
@@ -56,7 +56,7 @@
             <fieldset name="table" label="Table Layout">                
                 <field
                     name="mod_sbfootscores_table"
-                    type="radio"
+                    type="list"
                     default="points_only"
                     label="Tabele Style"
                     desc="Select Tabele Style To Show">
