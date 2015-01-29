@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="3.1"
+	client="site"
+	method="upgrade">
+	<name>SB - FBLogin</name>
+	<author>Subash Basnet</author>
+	<creationDate>January 2015</creationDate>
+	<copyright>Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>subashbsnt8@gmail.com</authorEmail>
+	<authorUrl>www.subash.joomla.com</authorUrl>
+	<version>1.0.0</version>
+	<description>Facebook Login Module For Joomla</description>
+	<files>
+		<filename module="mod_login">mod_sbfblogin.php</filename>
+		<folder>tmpl</folder>
+		<folder>css</folder>
+		<folder>js</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+        <filename>mod_sbfblogin.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+			</fieldset>
+		</fields>
+	</config>
+</extension>
